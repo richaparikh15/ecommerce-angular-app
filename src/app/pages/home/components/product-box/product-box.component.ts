@@ -25,14 +25,16 @@ export class ProductBoxComponent implements OnInit {
     this.addToCart.emit(this.product);
     window.dataLayer.push({
       event:'add_to_cart',
-      items:[
-       {
-        item_id:this.product?.id,
-        item_name: this.product?.title,
-        item_category: this.product?.category,
-        item_price:this.product?.price
-       }
-      ]
+      ecommece :{
+        items:[
+          {
+           item_id:this.product?.id,
+           item_name: this.product?.title,
+           item_category: this.product?.category,
+           item_price:this.product?.price
+          }
+         ]
+      }
     })
   }
 
