@@ -23,19 +23,19 @@ export class ProductBoxComponent implements OnInit {
 
   onAddToCart(): void{
     this.addToCart.emit(this.product);
-    window.dataLayer.push({
-      event:'add_to_cart',
-      ecommece :{
-        items:[
-          {
-           item_id:this.product?.id,
-           item_name: this.product?.title,
-           item_category: this.product?.category,
-           item_price:this.product?.price
-          }
-         ]
-      }
-    })
+    // window.dataLayer.push({
+    //   event:'add_to_cart',
+    //   ecommece :{
+    //     items:[
+    //       {
+    //        item_id:this.product?.id,
+    //        item_name: this.product?.title,
+    //        item_category: this.product?.category,
+    //        item_price:this.product?.price
+    //       }
+    //      ]
+    //   }
+    // })
   }
 
 }
