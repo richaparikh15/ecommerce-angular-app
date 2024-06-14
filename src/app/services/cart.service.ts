@@ -27,19 +27,22 @@ export class CartService {
     this._snackBar.open('1 item added to cart.', 'Ok', { duration: 3000 }); // 3 seconds
     console.log(this.cart.value);
 
-    window.dataLayer.push({
-      event:'view_cart',
-      ecommece :{
-        items:[
-          {
-           item_id:item?.id,
-           item_name:item.name,
-           item_price:item.price,
-           item_quantity:item.quantity
-          }
-         ]
-      }
-    })
+    items.forEach(item => {
+      window.dataLayer.push({
+        event:'view_cart',
+        ecommece :{
+          items:[
+            {
+             item_id:item?.id,
+             item_name:item.name,
+             item_price:item.price,
+             item_quantity:item.quantity
+            }
+           ]
+        }
+      })
+    });
+    
   }
 
   getTotal(items: Array<CartItem>): number{
