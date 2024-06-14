@@ -13,7 +13,7 @@ export class StoreService {
 
   getAllProducts(limit = '24', sort= 'desc'): Observable<Array<Product>>{
     return this.httpClient.get<Array<Product>>(
-      `${STORE_BASE_URL}/products?sort=${sort}&limit=${limit}`
+      `${STORE_BASE_URL}/products`
     )
   }
 
