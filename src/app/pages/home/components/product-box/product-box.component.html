@@ -4,7 +4,6 @@
     [src]="product.image" alt="" class="mb-1 mx-auto h-[200px]">
     <div class="w-full" [ngClass]="{'px-8 flex flex-col justify-between': fullWidthMode}">
       <div>
-        <p style="display: none;" id="product-id">{{product.id}}</p>
         <h5 id="product-category">{{ product.category }}</h5>
         <p class="truncate hover:whitespace-normal" id="product-title">{{ product.title }}</p>
         <p *ngIf="fullWidthMode" id="product-description">{{ product.description }}</p>
