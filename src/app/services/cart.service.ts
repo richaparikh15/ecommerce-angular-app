@@ -14,6 +14,7 @@ export class CartService {
 
   addToCart(item: CartItem): void{
     const items = [...this.cart.value.items];
+    const itemsArray: { item_id: number; item_name: string; item_quantity: number; item_product: string; }[] =[];
 
     const itemInCart = items.find((_item) => item.id === _item.id);
 
@@ -28,21 +29,20 @@ export class CartService {
     console.log(this.cart.value);
 
     items.forEach(item => {
-      window.dataLayer.push({
-        event:'view_cart',
-        ecommece :{
-          items:[
-            {
-             item_id:item?.id,
-             item_name:item.name,
-             item_price:item.price,
-             item_quantity:item.quantity
-            }
-           ]
-        }
+      itemsArray.push({
+        item_id: item.id,
+        item_name: item.name,
+        item_quantity: item.quantity,
+        item_product:item.product
       })
     });
     
+    window.dataLayer.push({
+      event:'view_cart',
+      ecommece :{
+        items:itemsArray
+      }
+    })
   }
 
   getTotal(items: Array<CartItem>): number{
