@@ -50,6 +50,7 @@ export class AppComponent implements OnInit{
     const script = document.createElement('script');
     script.src = `https://www.googletagmanager.com/gtag/js?id=GTM-5JGL95PG`;
     script.setAttribute('nonce', this.nonce); // Set nonce attribute
+    script.setAttribute('id','gtmScript');
     script.async = true;
     script.onload = () => {
       // Initialize gtag function once script is loaded
