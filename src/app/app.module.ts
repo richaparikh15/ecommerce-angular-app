@@ -1,4 +1,4 @@
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule,  HTTP_INTERCEPTORS  } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatButtonModule } from '@angular/material/button';
@@ -25,6 +25,8 @@ import { ProductsHeaderComponent } from './pages/home/components/products-header
 import { HomeComponent } from './pages/home/home.component';
 import { CartService } from './services/cart.service';
 import { StoreService } from './services/store.service';
+import { CspInterceptor } from './csp-interceptor';
+import { NonceService } from './services/nonce.service';
 
 @NgModule({
   declarations: [
@@ -55,7 +57,15 @@ import { StoreService } from './services/store.service';
     MatSnackBarModule,
     HttpClientModule
   ],
-  providers: [CartService, StoreService],
+  providers: [
+    CartService, 
+    StoreService,
+    NonceService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: CspInterceptor,
+      multi: true
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
