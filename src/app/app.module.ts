@@ -58,13 +58,7 @@ import { NonceService } from './services/nonce.service';
   ],
   providers: [
     CartService, 
-    StoreService,
-    NonceService,
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: CspInterceptor,
-      multi: true
-    }],
+    StoreService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
