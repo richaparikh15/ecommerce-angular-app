@@ -25,7 +25,6 @@ import { ProductsHeaderComponent } from './pages/home/components/products-header
 import { HomeComponent } from './pages/home/home.component';
 import { CartService } from './services/cart.service';
 import { StoreService } from './services/store.service';
-import { CspInterceptor } from './csp-interceptor';
 import { NonceService } from './services/nonce.service';
 
 @NgModule({
