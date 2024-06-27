@@ -47,25 +47,7 @@ export class AppComponent implements OnInit{
   }
 
   loadGTM() {
-    // const script = document.createElement('script');
-    // script.src = `https://www.googletagmanager.com/gtag/js?id=GTM-5JGL95PG`;
-    // script.setAttribute('nonce', this.nonce); // Set nonce attribute
-    // script.setAttribute('id','gtmScript');
-    // script.async = true;
-    // script.onload = () => {
-    //   // Initialize gtag function once script is loaded
-    //   window['dataLayer'] = window['dataLayer'] || [];
-    //   function gtag(...args: any[]) {
-    //     window['dataLayer'].push(arguments);
-    //   }
 
-    //   // Initialize gtag and configure Google Analytics
-    //   gtag('js', new Date());
-    //   gtag('config', 'GTM-5JGL95PG'); // Replace with your Google Analytics Measurement ID
-    // };
-
-    // // Append script to the head of the document
-    // document.head.appendChild(script);
 
     const nonceId = document.getElementById('gtmScript');
     nonceId?.setAttribute('nonce',this.nonce);
